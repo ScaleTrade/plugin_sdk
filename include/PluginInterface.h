@@ -4,12 +4,15 @@
 #pragma once
 #include <rapidjson/document.h>
 #include "Structures.h"
+#include "model/PluginAccount.hpp"
+#include "model/PluginAccountEnums.hpp"
+#include "model/PluginAccountOutput.hpp"
+#include "model/PluginGroup.hpp"
+#include "model/PluginSymbol.hpp"
+#include "model/PluginTrade.hpp"
+#include "model/PluginTradeOutput.hpp"
 
 // подключение модулей
-#include "structures/AccountStructures.hpp"
-#include "structures/SymbolStructures.hpp"
-#include "structures/GroupStructures.hpp"
-#include "structures/TradeStructures.hpp"
 
 inline int PLUGIN_VERSION_API = 148;
 
@@ -20,19 +23,19 @@ class HookTrade {
 public:
     virtual ~HookTrade() = default;
     virtual int HookTradeRequestOpen(
-        const TradeRecord&,const GroupRecord&,const SymbolRecord&,const AccountRecord&,const MarginLevel&,TradeDiffRecord&
+        const PluginTradeRecord&,const PluginGroupRecord&,const PluginSymbolRecord&,const PluginAccountRecord&,const PluginMarginLevel&,PluginTradeDiffRecord&
     ){ return RET_OK; }
     virtual int HookTradeProcessOpen(
-        const TradeRecord&,const GroupRecord&,const SymbolRecord&,const AccountRecord&,const MarginLevel&,TradeDiffRecord&
+        const PluginTradeRecord&,const PluginGroupRecord&,const PluginSymbolRecord&,const PluginAccountRecord&,const PluginMarginLevel&,PluginTradeDiffRecord&
     ) { return RET_OK; }
     virtual int HookTradeRequestClose(
-        const TradeRecord&,const GroupRecord&,const SymbolRecord&,const AccountRecord&,const MarginLevel&,TradeDiffRecord&
+        const PluginTradeRecord&,const PluginGroupRecord&,const PluginSymbolRecord&,const PluginAccountRecord&,const PluginMarginLevel&,PluginTradeDiffRecord&
      ){ return RET_OK; }
     virtual int HookTradeProcessClose(
-        const TradeRecord&,const GroupRecord&,const SymbolRecord&,const AccountRecord&,const MarginLevel&,TradeDiffRecord&
+        const PluginTradeRecord&,const PluginGroupRecord&,const PluginSymbolRecord&,const PluginAccountRecord&,const PluginMarginLevel&,PluginTradeDiffRecord&
     ) { return RET_OK; }
     virtual int HookTradeProcessCommision(
-        const TradeRecord&,const GroupRecord&,const SymbolRecord&,const AccountRecord&,const MarginLevel&,TradeDiffRecord&
+        const PluginTradeRecord&,const PluginGroupRecord&,const PluginSymbolRecord&,const PluginAccountRecord&,const PluginMarginLevel&,PluginTradeDiffRecord&
     ) { return RET_OK; }
 };
 
@@ -42,11 +45,11 @@ public:
 class HookAccount {
 public:
     virtual ~HookAccount() = default;
-    virtual int HookAccountAdd(const AccountRecord&, const MarginLevel&, AccountDiffRecord&){ return RET_OK; }
-    virtual int HookAccountUpdate(const AccountRecord&, const MarginLevel&, AccountDiffRecord&) { return RET_OK; }
-    virtual int HookAccountDelete(const AccountRecord&, const MarginLevel&, AccountDiffRecord&){ return RET_OK; }
-    virtual int HookAccountLogin(const AccountRecord&) { return RET_OK; }
-    virtual int HookAccountLogout(const AccountRecord&) { return RET_OK; }
+    virtual int HookAccountAdd(const PluginAccountRecord&, const PluginMarginLevel&, PluginAccountDiffRecord&){ return RET_OK; }
+    virtual int HookAccountUpdate(const PluginAccountRecord&, const PluginMarginLevel&, PluginAccountDiffRecord&) { return RET_OK; }
+    virtual int HookAccountDelete(const PluginAccountRecord&, const PluginMarginLevel&, PluginAccountDiffRecord&){ return RET_OK; }
+    virtual int HookAccountLogin(const PluginAccountRecord&) { return RET_OK; }
+    virtual int HookAccountLogout(const PluginAccountRecord&) { return RET_OK; }
 };
 
 //+------------------------------------------------------------------+
@@ -55,13 +58,13 @@ public:
 class EventTrade {
 public:
     virtual ~EventTrade() = default;
-    virtual void OnTradeRequestOpen(const TradeRecord&) {}
-    virtual void OnTradeAddDB(const TradeRecord&) {}
-    virtual void OnTradeRequestClose(const TradeRecord&) {}
-    virtual void OnTradeRequestUpdate(const TradeRecord&) {}
-    virtual void OnTradeUpdateDB(const TradeRecord&) {}
-    virtual void OnTradeRequestDelete(const TradeRecord&) {}
-    virtual void OnTradeDeleteDB(const TradeRecord&) {}
+    virtual void OnTradeRequestOpen(const PluginTradeRecord&) {}
+    virtual void OnTradeAddDB(const PluginTradeRecord&) {}
+    virtual void OnTradeRequestClose(const PluginTradeRecord&) {}
+    virtual void OnTradeRequestUpdate(const PluginTradeRecord&) {}
+    virtual void OnTradeUpdateDB(const PluginTradeRecord&) {}
+    virtual void OnTradeRequestDelete(const PluginTradeRecord&) {}
+    virtual void OnTradeDeleteDB(const PluginTradeRecord&) {}
 };
 
 //+------------------------------------------------------------------+
@@ -78,12 +81,12 @@ public:
 class EventAccount {
 public:
     virtual ~EventAccount() = default;
-    virtual void OnAccountAdd(const AccountRecord& account) {}
-    virtual void OnAccountUpdate(const AccountRecord& account) {}
-    virtual void OnAccountDelete(const AccountRecord& account) {}
-    virtual void OnAccountLogin(const std::string& ip, ConnectionType type, const AccountRecord& account) {}
-    virtual void OnAccountLogout(const std::string& ip, ConnectionType type, const AccountRecord& account) {}
-    virtual void OnAccountPasswordChange(const std::string& password, const AccountRecord& account) {}
+    virtual void OnAccountAdd(const PluginAccountRecord& account) {}
+    virtual void OnAccountUpdate(const PluginAccountRecord& account) {}
+    virtual void OnAccountDelete(const PluginAccountRecord& account) {}
+    virtual void OnAccountLogin(const std::string& ip, PluginConnectionType type, const PluginAccountRecord& account) {}
+    virtual void OnAccountLogout(const std::string& ip, PluginConnectionType type, const PluginAccountRecord& account) {}
+    virtual void OnAccountPasswordChange(const std::string& password, const PluginAccountRecord& account) {}
     virtual void OnAccountSync() {}
 };
 

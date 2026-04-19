@@ -2,7 +2,7 @@
 
 #include <string>
 
-struct ServerLog {
+struct PluginServerLog {
     std::string time;
     std::string type;
     std::string ip;
