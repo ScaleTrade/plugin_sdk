@@ -12,6 +12,12 @@ The command rebuilds:
 
 The SDK exposes the full plugin-facing server API and public data structures required to compile plugins outside the main repository tree.
 
+Host interface contract:
+
+- `PluginServerInterface` is an abstract host interface, not a concrete runtime class
+- plugins must not construct or store `PluginServerInterface` by value
+- the host creates the runtime implementation and passes it to plugin entry points as `PluginServerInterface*`
+
 Trade contract:
 
 - stable plugin trade types are exported under `sdk/plugin/include/model/*`
