@@ -4,13 +4,13 @@
 #pragma once
 #include <rapidjson/document.h>
 #include "Structures.h"
-#include "model/PluginAccount.hpp"
-#include "model/PluginAccountEnums.hpp"
-#include "model/PluginAccountOutput.hpp"
-#include "model/PluginGroup.hpp"
-#include "model/PluginSymbol.hpp"
-#include "model/PluginTrade.hpp"
-#include "model/PluginTradeOutput.hpp"
+#include "sdk_contract/plugin/PluginAccount.hpp"
+#include "sdk_contract/plugin/PluginAccountEnums.hpp"
+#include "sdk_contract/plugin/PluginAccountOutput.hpp"
+#include "sdk_contract/plugin/PluginGroup.hpp"
+#include "sdk_contract/plugin/PluginSymbol.hpp"
+#include "sdk_contract/plugin/PluginTrade.hpp"
+#include "sdk_contract/plugin/PluginTradeOutput.hpp"
 
 // подключение модулей
 

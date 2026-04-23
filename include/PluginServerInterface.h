@@ -8,14 +8,14 @@
 #include <vector>
 
 #include "Structures.h"
-#include "model/PluginAccount.hpp"
-#include "model/PluginAccountInput.hpp"
-#include "model/PluginCandle.hpp"
-#include "model/PluginGroup.hpp"
-#include "model/PluginLog.hpp"
-#include "model/PluginSymbol.hpp"
-#include "model/PluginTrade.hpp"
-#include "model/PluginTradeInput.hpp"
+#include "sdk_contract/plugin/PluginAccount.hpp"
+#include "sdk_contract/plugin/PluginAccountInput.hpp"
+#include "sdk_contract/plugin/PluginCandle.hpp"
+#include "sdk_contract/plugin/PluginGroup.hpp"
+#include "sdk_contract/plugin/PluginLog.hpp"
+#include "sdk_contract/plugin/PluginSymbol.hpp"
+#include "sdk_contract/plugin/PluginTrade.hpp"
+#include "sdk_contract/plugin/PluginTradeInput.hpp"
 
 class Core;
 
