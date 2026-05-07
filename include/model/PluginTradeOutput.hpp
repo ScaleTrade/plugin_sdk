@@ -22,7 +22,7 @@ struct PluginTradeDiffRecord {
     double taxes = 0.0;
     int magic = 0;
     std::string comment;
-    int gw_order = 0;
+    std::string gw_order;
     PluginTradeActivation activation = PluginTradeActivation::None;
     double gw_open_price = 0.0;
     double gw_close_price = 0.0;

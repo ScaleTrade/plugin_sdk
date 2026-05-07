@@ -58,8 +58,8 @@ public:
     virtual int GetOpenTradeByOrder(int order, PluginTradeRecord* trade) = 0;
     virtual int GetOpenTradeByGwUUID(const std::string& gw_uuid, PluginTradeRecord* trade) = 0;
     virtual int GetCloseTradeByGwUUID(const std::string& gw_uuid, PluginTradeRecord* trade) = 0;
-    virtual int GetOpenTradeByGwOrder(int gw_order, PluginTradeRecord* trade) = 0;
-    virtual int GetCloseTradeByGwOrder(int gw_order, PluginTradeRecord* trade) = 0;
+    virtual int GetOpenTradeByGwOrder(const std::string& gw_order, PluginTradeRecord* trade) = 0;
+    virtual int GetCloseTradeByGwOrder(const std::string& gw_order, PluginTradeRecord* trade) = 0;
     virtual int GetOpenTradesByGroup(const std::string& filter_group, time_t from, time_t to, std::vector<PluginTradeRecord>* trades) = 0;
     virtual int GetCloseTradesByLogin(int login, std::vector<PluginTradeRecord>* trades) = 0;
     virtual int GetCloseTradesByGroup(const std::string& filter_group, time_t from, time_t to, std::vector<PluginTradeRecord>* trades) = 0;

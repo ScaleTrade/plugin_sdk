@@ -40,7 +40,7 @@ struct PluginTradeRequestRecord {
 
     int magic = 0;
     std::string comment;
-    int gw_order = 0;
+    std::string gw_order;
     std::string gw_source;
     std::string gw_uuid;
     PluginTradeActivation activation = PluginTradeActivation::None;
@@ -49,4 +49,5 @@ struct PluginTradeRequestRecord {
     double margin_rate = 0.0;
     std::string api_data;
     time_t last_swap_time = 0;
+    time_t update_time = 0;
 };
