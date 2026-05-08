@@ -15,11 +15,12 @@
 #include "model/PluginLog.hpp"
 #include "model/PluginSymbol.hpp"
 #include "model/PluginTrade.hpp"
+#include "model/PluginTradeGatewayData.hpp"
 #include "model/PluginTradeInput.hpp"
 
 class Core;
 
-inline int PLUGIN_SERVER_API = 105;
+inline int PLUGIN_SERVER_API = 106;
 
 class PluginServerInterface {
 public:
@@ -50,6 +51,7 @@ public:
     virtual int CloseTrade(const PluginTradeRequestRecord& trade) = 0;
     virtual int UpdateOpenTrade(const PluginTradeRequestRecord& trade) = 0;
     virtual int UpdateCloseTrade(const PluginTradeRequestRecord& trade) = 0;
+    virtual int SetTradeGatewayData(const PluginTradeGatewayDataUpdateRecord& update) = 0;
     virtual int CheckOpenTrade(const PluginTradeRequestRecord& trade) = 0;
     virtual int CheckCloseTrade(const PluginTradeRequestRecord& trade) = 0;
     virtual int GetOpenTradesByLogin(int login, std::vector<PluginTradeRecord>* trades) = 0;

@@ -46,7 +46,6 @@ struct PluginGroupRecord {
     int enable = 0;
     int timeout = 0;
     int otp_mode = 0;
-    std::string company;
     std::string signature;
     std::string support_page;
     std::string smtp_server;

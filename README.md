@@ -22,6 +22,7 @@ Trade contract:
 
 - stable plugin trade types are exported under `sdk/plugin/include/model/*`
 - `PluginInterface.h` and `PluginServerInterface.h` now use `PluginTradeRecord`, `PluginTradeRequestRecord`, and `PluginTradeDiffRecord`
+- `PluginServerInterface::SetTradeGatewayData()` uses `PluginTradeGatewayDataUpdateRecord` for partial gateway metadata updates by order without running the main trading flow
 - internal `TradeRecord` is no longer the public plugin trade contract
 
 Account contract:
