@@ -74,6 +74,7 @@ struct PluginGroupRecord {
     int maxpositions = 0;
     int close_reopen = 0;
     int hedge_prohibited = 0;
+    int partial_close = 0;
     int close_fifo = 0;
     int hedge_largeleg = 0;
     std::string securities_hash;
@@ -84,5 +85,5 @@ struct PluginGroupRecord {
     int archive_pending_period = 0;
     unsigned int news_languages[8] = {0, 0, 0, 0, 0, 0, 0, 0};
     unsigned int news_languages_total = 0;
-    int reserved[17] = {};
+    int reserved[16] = {};
 };

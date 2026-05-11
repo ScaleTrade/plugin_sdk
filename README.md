@@ -42,6 +42,7 @@ Group contract:
 - stable plugin group types are exported under `sdk/plugin/include/model/*`
 - `PluginInterface.h` trade hooks and `PluginServerInterface::GetGroup()` / `GetAllGroups()` use `PluginGroupRecord`
 - internal `GroupRecord` is no longer the public plugin group contract
+- `PluginGroupRecord::partial_close` mirrors the server group setting for partial-close permission; `0` means partial close is disabled for the group, non-zero means enabled
 
 Common models:
 
