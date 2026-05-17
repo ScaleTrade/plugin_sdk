@@ -5,6 +5,9 @@
 struct PluginTradeGatewayDataUpdateRecord {
     int order = 0;
 
+    bool has_gw_volume = false;
+    int gw_volume = 0;
+
     bool has_gw_order = false;
     std::string gw_order;
 

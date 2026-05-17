@@ -75,6 +75,7 @@ struct PluginGroupRecord {
     int close_reopen = 0;
     int hedge_prohibited = 0;
     int partial_close = 0;
+    int allow_sl_tp_slippage = 1;
     int close_fifo = 0;
     int hedge_largeleg = 0;
     std::string securities_hash;

@@ -14,7 +14,7 @@
 
 // подключение модулей
 
-inline int PLUGIN_VERSION_API = 148;
+inline int PLUGIN_VERSION_API = 149;
 
 //+------------------------------------------------------------------+
 // Hooks Trades
@@ -65,6 +65,8 @@ public:
     virtual void OnTradeUpdateDB(const PluginTradeRecord&) {}
     virtual void OnTradeRequestDelete(const PluginTradeRecord&) {}
     virtual void OnTradeDeleteDB(const PluginTradeRecord&) {}
+    virtual void OnTradeExecuteOpen(const PluginTradeRecord&) {}
+    virtual void OnTradeExecuteClose(const PluginTradeRecord&) {}
 };
 
 //+------------------------------------------------------------------+
