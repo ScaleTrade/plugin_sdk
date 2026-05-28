@@ -13,6 +13,7 @@ struct PluginTradeRecord {
     int digits = 2;
     PluginTradeCommand cmd = PluginTradeCommand::Nothing;
     int volume = 0;
+    int parent_order = 0;
 
     time_t open_time = 0;
     PluginTradeState state = PluginTradeState::NoChange;

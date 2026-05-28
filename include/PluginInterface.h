@@ -14,7 +14,7 @@
 
 // подключение модулей
 
-inline int PLUGIN_VERSION_API = 149;
+inline int PLUGIN_VERSION_API = 150;
 
 //+------------------------------------------------------------------+
 // Hooks Trades
