@@ -74,6 +74,7 @@ struct PluginGroupRecord {
     int maxpositions = 0;
     int close_reopen = 0;
     int hedge_prohibited = 0;
+    int allow_negative_margin_hedge = 1;
     int partial_close = 0;
     int allow_sl_tp_slippage = 1;
     int close_fifo = 0;
