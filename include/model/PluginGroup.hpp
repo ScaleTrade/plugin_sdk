@@ -63,6 +63,8 @@ struct PluginGroupRecord {
     int secmargins_total = 0;
     std::string currency;
     double credit = 0.0;
+    int credit_withdrawal_policy = 0;
+    double withdrawal_margin_reserve = 0.0;
     int margin_call = 0;
     int margin_mode = 1;
     int margin_stopout = 0;
