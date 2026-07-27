@@ -3,6 +3,14 @@
 #include <string>
 #include <unordered_map>
 
+enum PluginBonusUsagePolicy {
+    PLUGIN_BONUS_USAGE_NONE = 0,
+    PLUGIN_BONUS_USAGE_AS_TRADING_EQUITY = 1 << 0,
+    PLUGIN_BONUS_USAGE_ALLOW_CONVERSION = 1 << 1,
+    PLUGIN_BONUS_USAGE_ALLOW_REVOKE_WITH_OPEN_POSITIONS = 1 << 2,
+    PLUGIN_BONUS_USAGE_DEFAULT = 7
+};
+
 struct PluginGroupRecordSec {
     int sec_index = 0;
     int show = 0;
@@ -65,6 +73,7 @@ struct PluginGroupRecord {
     double credit = 0.0;
     int credit_withdrawal_policy = 0;
     double withdrawal_margin_reserve = 0.0;
+    int bonus_usage_policy = 7;
     int margin_call = 0;
     int margin_mode = 1;
     int margin_stopout = 0;
