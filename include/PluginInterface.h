@@ -14,7 +14,18 @@
 
 // подключение модулей
 
-inline int PLUGIN_VERSION_API = 150;
+inline constexpr int PLUGIN_VERSION_API = 151;
+
+#if defined(__GNUC__)
+#define PLUGIN_MODULE_EXPORT __attribute__((visibility("default")))
+#else
+#define PLUGIN_MODULE_EXPORT
+#endif
+
+extern "C" {
+PLUGIN_MODULE_EXPORT int GetPluginApiVersion();
+PLUGIN_MODULE_EXPORT int GetPluginServerApiVersion();
+}
 
 //+------------------------------------------------------------------+
 // Hooks Trades

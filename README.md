@@ -17,6 +17,12 @@ Host interface contract:
 - `PluginServerInterface` is an abstract host interface, not a concrete runtime class
 - plugins must not construct or store `PluginServerInterface` by value
 - the host creates the runtime implementation and passes it to plugin entry points as `PluginServerInterface*`
+- plugins must export `extern "C" int GetPluginApiVersion()` returning
+  `PLUGIN_VERSION_API`
+- plugins must export `extern "C" int GetPluginServerApiVersion()` returning
+  `PluginServerInterface::GetApiVersion()`
+- both versions must match the server exactly; compatibility is checked before
+  `CreatePlugin()` is called
 
 Trade contract:
 

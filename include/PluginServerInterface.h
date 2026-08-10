@@ -20,7 +20,7 @@
 
 class Core;
 
-inline int PLUGIN_SERVER_API = 106;
+inline constexpr int PLUGIN_SERVER_API = 107;
 
 class PluginServerInterface {
 public:
