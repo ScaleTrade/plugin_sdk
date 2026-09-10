@@ -98,5 +98,6 @@ struct PluginGroupRecord {
     int archive_pending_period = 0;
     unsigned int news_languages[8] = {0, 0, 0, 0, 0, 0, 0, 0};
     unsigned int news_languages_total = 0;
-    int reserved[16] = {};
+    int deposit_reversal_policy = 0;
+    int reserved[15] = {};
 };
